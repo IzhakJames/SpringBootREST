@@ -23,7 +23,7 @@ public class EmployeeRestExceptionHandler {
     public ResponseEntity<EmployeeErrorResponse> handleException(Exception exc) {
         EmployeeErrorResponse error = new EmployeeErrorResponse();
 
-        error.setStatus(HttpStatus.NOT_FOUND.value());
+        error.setStatus(HttpStatus.BAD_REQUEST.value());
         error.setMessage("Something went wrong. Please ensure that the student id is valid and in numeric format.");
         error.setTimeStamp(System.currentTimeMillis());
 
