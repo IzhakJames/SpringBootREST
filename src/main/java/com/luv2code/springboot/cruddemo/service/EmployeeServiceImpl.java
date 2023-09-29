@@ -3,6 +3,7 @@ package com.luv2code.springboot.cruddemo.service;
 import com.luv2code.springboot.cruddemo.dao.EmployeeDAO;
 import com.luv2code.springboot.cruddemo.dao.EmployeeRepository;
 import com.luv2code.springboot.cruddemo.entity.Employee;
+import com.luv2code.springboot.cruddemo.exception.EmployeeNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,7 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         if (result.isPresent()) {
             theEmployee = result.get();
         } else {
-            throw new RuntimeException("Employee id not found - " + theId);
+            throw new EmployeeNotFoundException("Employee id not found - " + theId);
         }
 
         return theEmployee;
@@ -50,7 +51,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         if (result.isPresent()) {
             employeeRepository.deleteById(theId);
         } else {
-            throw new RuntimeException("Employee id not found - " + theId);
+            throw new EmployeeNotFoundException("Employee id not found - " + theId);
         }
     }
 }
