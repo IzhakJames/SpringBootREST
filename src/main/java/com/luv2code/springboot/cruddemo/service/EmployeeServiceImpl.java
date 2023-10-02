@@ -1,12 +1,10 @@
 package com.luv2code.springboot.cruddemo.service;
 
-import com.luv2code.springboot.cruddemo.dao.EmployeeDAO;
 import com.luv2code.springboot.cruddemo.dao.EmployeeRepository;
 import com.luv2code.springboot.cruddemo.entity.Employee;
 import com.luv2code.springboot.cruddemo.exception.EmployeeNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
